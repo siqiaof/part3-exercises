@@ -1,6 +1,14 @@
 const express = require("express");
+const morgan = require("morgan");
+morgan.token("data", function getData(req) {
+  return JSON.stringify(req.body);
+});
+
 const app = express();
 app.use(express.json());
+app.use(
+  morgan(":method :url :status :res[content-length] - :response-time ms :data")
+);
 
 let persons = [
   {
@@ -74,9 +82,9 @@ app.post("/api/persons", (request, response) => {
   }
 
   const person = {
+    id: Math.floor(Math.random() * 100000),
     name: body.name,
     number: body.number,
-    id: Math.floor(Math.random() * 100000),
   };
 
   persons = persons.concat(person);
