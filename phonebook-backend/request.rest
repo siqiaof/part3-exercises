@@ -4,16 +4,16 @@ GET  http://localhost:3001/api/persons
 GET  http://localhost:3001/info
 
 ###
-GET  http://localhost:3001/api/persons/5
+GET  http://localhost:3001/api/persons/647de36526bdae9850898926
 
 ###
-DELETE http://localhost:3001/api/persons/4
+DELETE http://localhost:3001/api/persons/647de36526bdae9850898926
 
 ###
 POST http://localhost:3001/api/persons/
 content-type: application/json
 
 {
-    "name": "Siqiao ",
-    "number": "123"
+    "name": "Siqiao Fu",
+    "number": "010-13121232213"
 }
